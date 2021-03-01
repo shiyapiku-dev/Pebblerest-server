@@ -21,7 +21,7 @@ app.get('/',(req,res) => {
     res.send('Welcome to Pebble Rest API');
 });
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 mongoose.connect(process.env.US_DB_CONNECT, {useNewUrlParser:true, useUnifiedTopology:true })
     .then(() => app.listen(PORT, () => console.log(`Connected to DB!\nServer running on port: ${PORT}`)))
